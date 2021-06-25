@@ -1,4 +1,4 @@
-package NotasResource;
+package com.apiacademica.resource;
 
 
 import org.springframework.web.bind.annotation.DeleteMapping;

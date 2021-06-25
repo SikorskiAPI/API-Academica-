@@ -1,4 +1,4 @@
-package AlunosResource;
+package com.apiacademica.resource;
 
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;

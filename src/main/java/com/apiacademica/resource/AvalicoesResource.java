@@ -1,4 +1,5 @@
-package ModulosResource;
+package com.apiacademica.resource;
+
 
 
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -7,25 +8,25 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-@RequestMapping("/ModulosResource")
-public class ModulosResource {
+@RequestMapping("/AvalicoesResource")
+public class AvalicoesResource {
 	
 	@GetMapping()
-	public void listModulosResource() {
+	public void listAvalicaoResource() {
 		
 	}
 	
 	@PostMapping()
-	public void salvarModulosResource() {
+	public void salvarAvalicaoResource() {
 		
 	}
 	
 	@PutMapping()
-	public void atualizarModulosResource() {
+	public void atualizarAvalicaoResource() {
 		
 	}
 	@DeleteMapping()
-	public void excluirModulosResource() {
+	public void excluirAvalicaoResource() {
 		
 	}
 

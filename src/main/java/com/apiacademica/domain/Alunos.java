@@ -10,16 +10,18 @@ public class Alunos {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long IDalunos;
 	
-	private long IDalunos;
 	private String RA;
 	private String nome;
 	private String cpf;
 	private String endereco;
-	public long getIDalunos() {
+	
+	
+	public Long getIDalunos() {
 		return IDalunos;
 	}
-	public void setIDalunos(long iDalunos) {
+	public void setIDalunos(Long iDalunos) {
 		IDalunos = iDalunos;
 	}
 	public String getRA() {
@@ -46,5 +48,6 @@ public class Alunos {
 	public void setEndereco(String endereco) {
 		this.endereco = endereco;
 	}
+	
 	
 }

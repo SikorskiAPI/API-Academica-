@@ -10,15 +10,15 @@ public class Avaliacoes {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long IDavaliacoes;
+	private Long IDavaliacoes;
 	private String RA;
 	private String curso;
 	private String disciplina;
 	private String data;
-	public long getIDavaliacoes() {
+	public Long getIDavaliacoes() {
 		return IDavaliacoes;
 	}
-	public void setIDavaliacoes(long iDavaliacoes) {
+	public void setIDavaliacoes(Long iDavaliacoes) {
 		IDavaliacoes = iDavaliacoes;
 	}
 	public String getRA() {
@@ -45,6 +45,5 @@ public class Avaliacoes {
 	public void setData(String data) {
 		this.data = data;
 	}
-	
 
 }

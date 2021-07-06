@@ -8,45 +8,45 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.apiacademica.domain.Modulos;
-import com.apiacademica.repository.IModulosRepository;
+import com.apiacademica.domain.Avaliacoes;
+import com.apiacademica.repository.IAvaliacoesRepository;
 
 @RestController
-@RequestMapping("/v1/modulos")
-public class ModulosResource {
-
+@RequestMapping("/v2/avaliacoes")
+public class AvalicoesResource2 {
+	
 	@Autowired
-	private IModulosRepository repository;	
+	private IAvaliacoesRepository repository;
 	
 	@GetMapping()
-	public ResponseEntity<List<Modulos>> listModulos(){
+	public ResponseEntity<List<Avaliacoes>> listAvaliacoes(){
 		return ResponseEntity.
 				status(HttpStatus.OK).
 				body( repository.findAll());
 	}
 	
 	@PostMapping()
-	public void salvarModulosResource(@RequestBody Modulos m){
-
-		repository.save(m);
+	public ResponseEntity<Avaliacoes> salvarAvaliacoes(@RequestBody Avaliacoes ava) {
+		return ResponseEntity.
+				status(HttpStatus.OK).
+				body(this.repository.save(ava));
 	
 	}
 	
 	@PutMapping()
-	public void atualizarModulosResource() {
+	public void atualizarAvalicaoResource() {
 		
 	}
-	@DeleteMapping()
-	public void excluirModulosResource() {
-		
+	@DeleteMapping(value = "/{idavaliacoes}")
+	public void excluirAlunos(@PathVariable Long idavaliacoes) {
+		repository.deleteById(idavaliacoes);
 	}
-
-	
-
 }
+

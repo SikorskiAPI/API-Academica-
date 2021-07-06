@@ -8,6 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -18,8 +19,8 @@ import com.apiacademica.domain.Modulos;
 import com.apiacademica.repository.IModulosRepository;
 
 @RestController
-@RequestMapping("/v1/modulos")
-public class ModulosResource {
+@RequestMapping("/v2/modulos")
+public class ModulosResource2 {
 
 	@Autowired
 	private IModulosRepository repository;	
@@ -32,9 +33,10 @@ public class ModulosResource {
 	}
 	
 	@PostMapping()
-	public void salvarModulosResource(@RequestBody Modulos m){
-
-		repository.save(m);
+	public ResponseEntity<Modulos> salvarModulos(@RequestBody Modulos m) {
+		return ResponseEntity.
+				status(HttpStatus.OK).
+				body(this.repository.save(m));
 	
 	}
 	
@@ -42,11 +44,9 @@ public class ModulosResource {
 	public void atualizarModulosResource() {
 		
 	}
-	@DeleteMapping()
-	public void excluirModulosResource() {
-		
+	@DeleteMapping(value = "/{idmodulos}")
+	public void excluirAlunos(@PathVariable Long idmodulos) {
+		repository.deleteById(idmodulos);
 	}
-
-	
-
 }
+

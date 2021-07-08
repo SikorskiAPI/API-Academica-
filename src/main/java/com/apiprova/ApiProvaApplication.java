@@ -1,4 +1,4 @@
-package com.apiacademica;
+package com.apiprova;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -6,11 +6,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 
 @SpringBootApplication
-public class ApiAcademicaApplication {
+public class ApiProvaApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ApiAcademicaApplication.class, args);
-		System.out.println("porta:1805");
+		SpringApplication.run(ApiProvaApplication.class, args);
+		System.out.println("porta:1002");
 
 		
 	}

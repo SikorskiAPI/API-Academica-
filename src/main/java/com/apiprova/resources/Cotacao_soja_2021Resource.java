@@ -1,7 +1,4 @@
-package com.apiacademica.resource;
-
-
-import java.util.List;
+package com.apiprova.resources;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -14,39 +11,36 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.apiacademica.domain.Modulos;
-import com.apiacademica.repository.IModulosRepository;
+import com.apiprova.domain.Cotacao_soja_2021;
+import com.apiprova.repository.Cotacao_soja_2021Repository;;
 
 @RestController
-@RequestMapping("/v1/modulos")
-public class ModulosResource {
-
+@RequestMapping("/v1/cotacao_soja_2021")
+public class Cotacao_soja_2021Resource {
+	
 	@Autowired
-	private IModulosRepository repository;	
+	private Cotacao_soja_2021Repository repository;
 	
 	@GetMapping()
-	public ResponseEntity<List<Modulos>> listModulos(){
+	public ResponseEntity<Object> listCotacao_soja_2021(){
 		return ResponseEntity.
 				status(HttpStatus.OK).
 				body( repository.findAll());
+		
 	}
 	
 	@PostMapping()
-	public void salvarModulosResource(@RequestBody Modulos m){
+	public void salvarCotacao_milho_2021(@RequestBody Cotacao_soja_2021 cs){
 
-		repository.save(m);
+		repository.save(cs);
 	
 	}
 	
 	@PutMapping()
-	public void atualizarModulosResource() {
-		
+	public void atualizarCotacao_soja_2021() {
 	}
+
 	@DeleteMapping()
-	public void excluirModulosResource() {
-		
-	}
-
-	
-
+	public void excluirCotacao_soja_2021() {
+    } 
 }

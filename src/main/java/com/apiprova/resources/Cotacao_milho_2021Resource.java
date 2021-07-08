@@ -1,6 +1,4 @@
-package com.apiacademica.resource;
-
-import java.util.List;
+package com.apiprova.resources;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -13,39 +11,36 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.apiacademica.domain.Notas;
-import com.apiacademica.repository.INotasRepository;
+import com.apiprova.domain.Cotacao_milho_2021;
+import com.apiprova.repository.Cotacao_milho_2021Repository;;
 
 @RestController
-@RequestMapping("/v1/notas")
-public class NotasResource {
+@RequestMapping("/v1/cotacao_milho_2021")
+public class Cotacao_milho_2021Resource {
 	
 	@Autowired
-	private INotasRepository repository;
+	private Cotacao_milho_2021Repository repository;
 	
 	@GetMapping()
-	public ResponseEntity<List<Notas>> listNotas(){
+	public ResponseEntity<Object> listCotacao_milho_2021(){
 		return ResponseEntity.
 				status(HttpStatus.OK).
 				body( repository.findAll());
+		
 	}
 	
 	@PostMapping()
-		public void salvarNotasResource(@RequestBody Notas n){
+	public void salvarCotacao_soja_2021(@RequestBody Cotacao_milho_2021 cm){
 
-			repository.save(n);
+		repository.save(cm);
 	
 	}
 	
 	@PutMapping()
-	public void atualizarNotaResource() {
-		
+	public void atualizarCotacao_milho_2021() {
 	}
+
 	@DeleteMapping()
-	public void excluirNotaResource() {
-		
-	}
-
-	
-
+	public void excluirCotacao_milho_2021() {
+    } 
 }
